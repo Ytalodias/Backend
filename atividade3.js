@@ -1,4 +1,4 @@
-<script>
+
 
 // 1. buscarDadosDoServidor
 function buscarDadosDoServidor() {
@@ -192,4 +192,3 @@ function buscarDadosDoServidor() {
   }
   
   executarTudo();
-</script>
