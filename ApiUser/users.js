@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
 
-// Banco de dados em memória (exemplo)
+
 let users = [
   { id: 1, name: 'Ana Clara', email: 'ana@example.com' },
   { id: 2, name: 'Luana Florencio', email: 'luana@example.com' },
 ];
 
-// 🔍 GET /users?name= — Lista usuários com filtro opcional
+
 router.get('/', (req, res) => {
   const { name } = req.query;
   if (name) {
@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
   res.json(users);
 });
 
-// 🔍 GET /users/:id — Busca usuário por ID
+
 router.get('/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const user = users.find(u => u.id === id);
@@ -29,11 +29,11 @@ router.get('/:id', (req, res) => {
   res.json(user);
 });
 
-// ➕ POST /users — Cria novo usuário com validação
+
 router.post('/', (req, res) => {
   const { id, name, email } = req.body;
 
-  // Validações
+
   if (id === undefined || isNaN(id)) {
     return res.status(400).json({ error: 'ID é obrigatório e deve ser numérico.' });
   }
@@ -44,7 +44,7 @@ router.post('/', (req, res) => {
     return res.status(400).json({ error: 'Email é obrigatório e deve ser válido.' });
   }
 
-  // Verifica se ID já existe
+
   if (users.some(u => u.id === id)) {
     return res.status(400).json({ error: 'ID já existe.' });
   }
@@ -54,7 +54,7 @@ router.post('/', (req, res) => {
   res.status(201).json(newUser);
 });
 
-// Função de validação de e-mail
+
 function validateEmail(email) {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return regex.test(email);
