@@ -1,0 +1,2 @@
+Primeira linha do arquivo 1.
+Segunda linha do arquivo 1.
