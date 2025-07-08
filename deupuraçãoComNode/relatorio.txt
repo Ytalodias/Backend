@@ -1,0 +1,19 @@
+/*
+Relatório de Depuração:
+
+Ferramentas usadas:
+- console.log()
+- try/catch
+- Validador JSON online
+- Visual Studio Code (com depurador)
+
+Erros encontrados:
+1. JSON malformado (faltavam colchetes, vírgulas, aspas) no arquivo `usuarios.json`
+2. Variável 'mensagem' não estava declarada
+3. Falta de tratamento de erro ao fazer JSON.parse
+
+Como resolvi:
+- Corrigi o JSON para uma estrutura válida
+- Adicionei try/catch para capturar e exibir erros de conversão
+- Declarei a variável 'mensagem' na função antes de usá-la
+*/
